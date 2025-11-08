@@ -1,0 +1,24 @@
+.container-usuario{ 
+    
+    .box{
+        border: 1px solid #646cff;
+        padding: 40px 80px;
+        background-color: #121212;
+
+        h1{
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        p{
+            margin: 7px;
+        }
+
+        .btns{
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+    }
+}
