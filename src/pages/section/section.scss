@@ -101,9 +101,8 @@
             }
 
             .ver-mais {
-                width: 30%;
-                font-size: 1.5rem;
-                padding: 8px 12px;
+                font-size: 1rem;
+                padding: 10px 12px;
             }
         }
     }
@@ -125,14 +124,13 @@
 
                 p {
                     padding: 0 20px;
-                    font-size: 1.6rem;
+                    font-size: 1.3rem;
                 }
             }
 
             .ver-mais {
-                width: 50%;
-                font-size: 1.5rem;
-                padding: 15px 0;
+                width: 40%;
+                font-size: 1.1rem;
             }
         }
     }
@@ -163,6 +161,39 @@
                 font-size: 1rem;
                 padding: 13px 4px;
                 margin-top: 50px;
+            }
+
+            .section-do-login {
+                margin-top: 20px;
+            }
+        }
+
+    }
+}
+@media (max-width: 600px) {
+    .banner {
+        padding: 150px 80px 20px;
+        background: linear-gradient(130deg, #121212, #5058e0, rgb(194, 255, 25));
+
+
+        .box-section {
+            .legend-banner {
+                text-align: center;
+
+                .welcome {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    margin-top: 40px;
+                }
+            }
+
+            .ver-mais {
+                width: 50%;
+                font-size: 1rem;
+                margin-top: 30px;
             }
 
             .section-do-login {
