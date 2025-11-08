@@ -26,7 +26,7 @@ function Contato() {
         setStatusMensagem('');
 
         try {
-            await axios.post('http://localhost:5000/enviar-mensagem', {
+            await axios.post(`${import.meta.env.VITE_API_URL}/enviar-mensagem`, {
                 assunto: assunto || 'Mensagem de visitante',
                 nome: nome,
                 email: email,
