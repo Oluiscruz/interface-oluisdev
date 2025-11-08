@@ -160,3 +160,32 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .container-contato{
+
+        .caixa-contact{
+            width: 90%;
+        }
+    }
+}
+@media (max-width: 760px) {
+    .container-contato{
+        padding: 20px;
+        .caixa-contact{
+            width: 100%;
+            padding: 15px 20px;
+
+            .title-contact{
+                h1{
+                    font-size: 1rem;
+
+                }
+                p{
+                    font-size: 0.9rem;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}

@@ -9,6 +9,7 @@ function Header() {
     const { usuario } = UseAuth();
     const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
     const [visible, setVisible] = useState(true);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,26 +29,37 @@ function Header() {
 
 
     return (
-        <div className={`header ${visible ? 'visible' : 'hidden'}`}>
+        <div className={`header ${visible ? 'visible' : 'hidden'} ${menuOpen ? 'menu-open' : ''}`}>
             <div className="title-header">
                 <h1 onClick={reload} className='logo'>.OluisDev</h1>
             </div>
-            <nav className="links">
+
+            <button
+                className={`menu-button ${menuOpen ? 'open' : ''}`}
+                onClick={() => setMenuOpen(prev => !prev)}
+                aria-label="Abrir menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav className={`links ${menuOpen ? 'open' : ''}`}>
                 {usuario ? (
                     <nav className='logado'>
                         <span>Olá, {usuario.nome}</span>
 
-                        <Link to="/">Home</Link>
-                        <Link to="/perfil">Perfil</Link>
-                        <a href="#" onClick={EmBreve}>Serviços</a>
-                        <a href="#contato" onClick={irAteContato}>Contato</a>
+                        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+                        <Link to="/perfil" onClick={() => setMenuOpen(false)}>Perfil</Link>
+                        <a href="#" onClick={(e) => { e.preventDefault(); setMenuOpen(false); EmBreve(); }}>Serviços</a>
+                        <a href="#contato" onClick={(e) => { e.preventDefault(); setMenuOpen(false); irAteContato(); }}>Contato</a>
                     </nav>
                 ) : (
                     <nav className="visita">
                         <span>Olá, visitante</span>
-                        <Link to="/login">Entrar</Link>
-                        <a href="#" onClick={EmBreve}>Serviços</a>
-                        <a href="#contato" onClick={irAteContato}>Contato</a>
+                        <Link to="/login" onClick={() => setMenuOpen(false)}>Entrar</Link>
+                        <a href="#" onClick={(e) => { e.preventDefault(); setMenuOpen(false); EmBreve(); }}>Serviços</a>
+                        <a href="#contato" onClick={(e) => { e.preventDefault(); setMenuOpen(false); irAteContato(); }}>Contato</a>
                     </nav>
                 )}
             </nav>

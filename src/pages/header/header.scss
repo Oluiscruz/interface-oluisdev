@@ -6,7 +6,7 @@
 
 .header {
     background-color: transparent;
-    padding: 20px 80px;
+    padding: 15px 90px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -34,7 +34,7 @@
     }
 
     .title-header {
-        font-size: 1rem;
+        font-size: 0.7rem;
         cursor: pointer;
         transition: all 0.3s ease-in;
 
@@ -64,6 +64,120 @@
                 color: #646cff;
                 transition: all 0.2s ease;
             }
+        }
+    }
+}
+@media (min-width:801px){
+    .menu-button{
+        display: none;
+        border: none;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .header {
+        padding: 25px 30px;
+
+        .title-header{
+            font-size: 0.8rem;
+        }
+
+        .menu-button {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            background: transparent;
+            border: none transparent;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 10px;
+        }
+
+        .menu-button span {
+            display: block;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.25s ease;
+        }
+
+        .menu-button.open span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .menu-button.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-button.open span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        /* Hide desktop links and show mobile panel when opened */
+        .links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #0b0b0b;
+            flex-direction: column;
+            gap: 20px;
+            padding: 14px 20px 20px 20px;
+            border-bottom: 1px solid #ffffff22;
+        }
+
+        .links.open {
+            display: flex;
+
+        }
+
+        .links .logado,
+        .links .visita {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+            padding: 10px;
+        }
+
+        .links a,
+        .links span,
+        .links .logo {
+            padding: 8px;
+            font-size: 1.2rem;
+        }
+    }
+    
+    .links {
+        
+        .visita span {
+            padding: 12px 20px;
+            width: 80%;
+            border-radius: 25px;
+            font-size: 1.6rem;
+            color: #2c32b3;
+            background-color: #fff;
+        }
+        .logado span {
+            padding: 12px 20px;
+            width: 80%;
+            border-radius: 25px;
+            font-size: 1.6rem;
+            color: #2c32b3;
+            background-color: #fff;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .title-header{
+        h1{
+            font-size: 2.3rem;
+
         }
     }
 }
