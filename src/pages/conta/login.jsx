@@ -24,7 +24,7 @@ function Login() {
         setMensagem("");
 
         try {
-            const response = await axios.post(import.meta.env.VITE_API_URL, {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
                 email: email,
                 senha: senha,
             });
